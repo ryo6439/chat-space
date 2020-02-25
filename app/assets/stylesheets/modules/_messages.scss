@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+.wrapper{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  .side-bar{
+    width: 300px;
+    height: 100vh;
+    background-color: #253141;
+    &__header{
+      height: 100px;
+      width: 300px;
+      background-color: #253142;
+      padding: 0 20px;
+      align-items: center;
+      display: flex;
+      &__name{
+        height: 20px;
+        background-color: #253141;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        &__user{         
+          font-weight: bold;
+          font-size: 16px;
+          color: #ffffff;
+        }
+        &__icon{
+         display: flex;
+         color: #ffffff;
+         width: 60px;
+         text-align: right;
+         padding-left: 20px;
+
+
+         .pencil{
+           color: #ffffff;
+         }
+         .gear{
+           color: #ffffff;
+           margin-left: 5px;
+         }
+        }
+      }
+    } 
+    &__box{
+      height: calc(100vh - 100px);
+      width: 300px;
+      background-color:  #2f3e51;
+      padding: 0 20px;
+    
+      &__class{
+        padding-top: 20px;
+
+        &__group{
+          margin-bottom: 5px;
+          font-size: 15px;
+          color: #ffffff;
+          font-weight: bold;
+        }
+        &__message{
+          margin-bottom: 40px;
+          font-size: 11px;
+          color: #ffffff;
+          font-weight: bold;
+        }
+      } 
+    }  
+  }
+
+  .main-bar{
+    width: calc(100vw - 300px);
+    height: 100vh;
+    background-color: #ffffff;
+    &__header{
+      height: 100px;
+      width: calc(100vw - 300px);
+      background-color: #eeeeee;
+      &__left{
+
+      }
+    &__center{
+      height: calc(100vh - 190px);
+      width: calc(100vw - 300px);
+      background-color: #fafafa;
+    }
+    &__under{
+      height: 90px;
+      width: calc(100vw - 300px);
+      background-color: #d2d2d2;
+    }
+    }
+  }
