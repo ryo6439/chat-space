@@ -2,6 +2,31 @@
   .main-bar__header
     .main-bar__header__left
       .main-bar__header__left__test
-        .main-bar__header__left__masa
+        test
+        .main-bar__header__left__test__masa
+          Member : masa
+    .main-bar__header__right  
+      =link_to "edit" , class: "switch" 
   .main-bar__center
-  .main-bar__under
+    .main-bar__center__box
+      .main-bar__center__box__name
+        名前
+      .main-bar__center__box__tweet
+        2020/2/3
+    .main-bar__center__text
+      おはようサン
+      .main-bar__center__box
+      .main-bar__center__box__name
+        名前
+      .main-bar__center__box__tweet
+        2020/2/3
+    .main-bar__center__text
+      おはようサン
+  .form
+    %form.new_message
+      .main-bar__under
+        %input{type: "text", class: "main-bar__under__text",placeholder: "type a message"}
+        %label{class: "main-bar__under__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "main-bar__under__file"}
+      %input{type: "submit", class: "submit-btn", value:"send",name:"commit"}
