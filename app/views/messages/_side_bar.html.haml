@@ -7,27 +7,12 @@
         = link_to new_group_path do
           = icon("fas", "edit", class: 'pencil')
         = link_to edit_user_path(current_user) do
-          = icon("fas", "cog", class: 'gear')
+          = icon("fas", "cog", class: 'gear')    
   .side-bar__box
-    .side-bar__box__class
-      .side-bar__box__class__group
-        techcamp
-      .side-bar__box__class__message
-        まだメッセージがありません
-
-    .side-bar__box__class
-      .side-bar__box__class__group
-        techcamp2
-      .side-bar__box__class__message
-        まだメッセージがありません1234
-
-    .side-bar__box__class
-      .side-bar__box__class__group
-        techcamp3
-      .side-bar__box__class__message
-        まだメッセージがありません1234567
-      
-
-
-
-
+    - current_user.groups.each do |group|
+      .side-bar__box__class
+        = link_to '#' do
+          .side-bar__box__class__group
+            = group.name
+          .side-bar__box__class__message
+            メッセージはまだありません。
