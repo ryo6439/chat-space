@@ -2,31 +2,23 @@
   .main-bar__header
     .main-bar__header__left
       .main-bar__header__left__test
-        test
+        = @group.name
         .main-bar__header__left__test__masa
-          Member : masa
+          %ul.main-bar__left__test__masa__sin
+          - @group.users.each do |user|
+            %li.main-bar__left__test__masa__kiwami
+              = user.name   
     .main-bar__header__right  
-      =link_to "edit" , class: "switch" 
+      =link_to edit_group_path(@group), class: "main-header__right__edit-btn" do
+        edit       
   .main-bar__center
-    .main-bar__center__box
-      .main-bar__center__box__name
-        名前
-      .main-bar__center__box__tweet
-        2020/2/3
-    .main-bar__center__text
-      おはようサン
-      .main-bar__center__box
-      .main-bar__center__box__name
-        名前
-      .main-bar__center__box__tweet
-        2020/2/3
-    .main-bar__center__text
-      おはようサン
+    = render @messages
   .form
-    %form.new_message
-      .main-bar__under
-        %input{type: "text", class: "main-bar__under__text",placeholder: "type a message"}
-        %label{class: "main-bar__under__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "main-bar__under__file"}
-      %input{type: "submit", class: "submit-btn", value:"send",name:"commit"}
+    = form_for [@group, @message] do |f|
+      .new_message
+        .main-bar__under
+          = f.text_field :content, class: 'main-bar__under__text', placeholder: 'type a message'
+          = f.label :image, class: 'main-bar__under__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit-btn'
