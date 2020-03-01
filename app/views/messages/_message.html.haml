@@ -1,0 +1,45 @@
+-# .message
+-#   .upper-message
+-#     .upper-message__user-name
+-#       = message.user.name
+-#     .upper-message__date
+-#       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+-#   .lower-message
+-#     - if message.content.present?
+-#       %p.lower-message__content
+-#         = message.content
+-#     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+.main-bar__center__box
+  .upper-message
+    .main-bar__center__box__name
+      = message.user.name
+    .main-bar__center__box__tweet
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .lower-message
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+      = image_tag message.image.url, class: 'lower-message__text' if message.image.present?
+    
+    
+    
+    
+    -# .main-bar__center__box
+    -#   .main-bar__center__box__name
+    -#     = message.user.name
+    -#   .main-bar__center__box__tweet
+    -#     2020/2/3
+    -# .main-bar__center__text
+    -#   おはようサン
+
+    -# .main-bar__center__box
+    -#   .main-bar__center__box__name
+    -#     名前
+    -#   .main-bar__center__box__tweet
+    -#     2020/2/3
+    -# .main-bar__center__text
+    -#   おはようサン
+
+
+      

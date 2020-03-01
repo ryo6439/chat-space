@@ -3,16 +3,16 @@
     .side-bar__header__name
       = current_user.name
       .side-bar__header__name__user
-      .side-bar__header__name__icon
-        = link_to new_group_path do
-          = icon("fas", "edit", class: 'pencil')
-        = link_to edit_user_path(current_user) do
-          = icon("fas", "cog", class: 'gear')    
+        .side-bar__header__name__icon
+          = link_to new_group_path do
+            = icon("fas", "edit", class: 'pencil')
+          = link_to edit_user_path(current_user) do
+            = icon("fas", "cog", class: 'gear')    
   .side-bar__box
     - current_user.groups.each do |group|
       .side-bar__box__class
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .side-bar__box__class__group
             = group.name
           .side-bar__box__class__message
-            メッセージはまだありません。
+            = group.show_last_message
