@@ -50,6 +50,11 @@
       width: 300px;
       background-color:  #2f3e51;
       padding: 0 20px;
+      overflow: scroll;
+
+      a {
+        text-decoration: none;
+      }
     
       &__class{
         padding-top: 20px;
@@ -59,6 +64,7 @@
           font-size: 15px;
           color: #ffffff;
           font-weight: bold;
+          text-decoration: none;
         }
         &__message{
           margin-bottom: 40px;
@@ -88,12 +94,14 @@
         &__test{
           font-size: 20px;
           color: #333333;
+          list-style: none;
+          display: block;
+          
         
           &__masa{
             padding-top: 20px;
             color: #999999;
             font-size: 12px;
-            display: block;
           }
         }
       } 
@@ -118,9 +126,13 @@
       width: calc(100vw - 300px);
       background-color: #fafafa;
       padding-left: 40px;
+      overflow: scroll;
       &__box{
         padding-top: 35px;
-        display: flex;
+
+         .upper-message{
+           display: flex;
+         }
 
         &__name{
           color: #333333;
