@@ -4,13 +4,12 @@
       .main-bar__header__left__test
         = @group.name
         .main-bar__header__left__test__masa
-          %ul.main-bar__left__test__masa__sin
+          Member
           - @group.users.each do |user|
-            %li.main-bar__left__test__masa__kiwami
-              = user.name   
+            = user.name   
     .main-bar__header__right  
       =link_to edit_group_path(@group), class: "main-header__right__edit-btn" do
-        edit       
+        Edit       
   .main-bar__center
     = render @messages
   .form
