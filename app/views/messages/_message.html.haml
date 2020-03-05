@@ -9,8 +9,7 @@
 -#       %p.lower-message__content
 -#         = message.content
 -#     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
-
-.main-bar__center__box
+.main-bar__center__box{data: {message: {id: message.id}}}
   .upper-message
     .main-bar__center__box__name
       = message.user.name
