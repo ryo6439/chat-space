@@ -1,96 +1,52 @@
-// $(function(){
-//   var last_message_id = $('.message:last').data("message-id");
-//   console.log(last_message_id);
-//       function buildHTML(message){
-//         if ( message.image ) {
-//           var html =
-//            `<div class="main-bar__center__box">
-//               <div class="upper-message">
-//                 <div class="main-bar__center__box__name">
-//                   ${message.user_name}
-//                 </div>
-//                 <div class="main-bar__center__box__tweet">
-//                   ${message.created_at}
-//                 </div>
-//               </div>
-//               <div class="lower-message">
-//                 <p class="lower-message__content">
-//                   ${message.content}
-//                 </p>
-//               </div>
-//                 <img src=${message.image} >
-//             </div>`
-//         return html;
-//       } else {
-//       var html =
-//         `<div class="main-bar__center__box">
-//             <div class="upper-message">
-//                 <div class="main-bar__center__box__name">
-//                   ${message.user_name}
-//                 </div>
-//                 <div class="main-bar__center__box__tweet">
-//                   ${message.created_at}
-//                 </div>
-//               </div>
-//             <div class="lower-message">
-//               <p class="lower-message__content">
-//                 ${message.content}
-//               </p>
-//             </div>
-//           </div>`
-//         return html;
-//       };
-//     } 
-    
-$(function(){
+ $(function(){
   var buildHTML = function(message) {
     if (message.content && message.image) {
-      var html = `<div class="main-bar__center__box" data-message-id=` + message.id + `>` +
-        `<div class="upper-message">` +
-          `<div class="main-bar__center__box__name">` +
-            message.user_name +
-          `</div>` +
-          `<div class="main-bar__center__box__tweet">` +
-            message.created_at +
-          `</div>` +
-        `</div>` +
-        `<div class="lower-message">` +
-          `<p class="lower-message__content">` +
-            message.content +
-          `</p>` +
-          `<img src="` + message.image + `" class="lower-message__image" >` +
-        `</div>` +
-      `</div>`
+      var html = `<div class="main-bar__center__box" data-message-id= message.id >
+        <div class="upper-message">
+          <div class="main-bar__center__box__name">
+            message.user_name 
+          </div>
+          <div class="main-bar__center__box__tweet">
+            message.created_at 
+          </div>
+        </div> 
+        <div class="lower-message"> 
+          <p class="lower-message__content">
+            message.content 
+          </p>
+          <img src="` + message.image + `" class="lower-message__image" >
+        </div>
+      </div>`
     } else if (message.content) {
-      var html = `<div class="main-bar__center__box" data-message-id=` + message.id + `>` +
-        `<div class="upper-message">` +
-          `<div class="main-bar__center__box__name">` +
-            message.user_name +
-          `</div>` +
-          `<div class="main-bar__center__box__tweet">` +
-            message.created_at +
-          `</div>` +
-        `</div>` +
-        `<div class="lower-message">` +
-          `<p class="lower-message__content">` +
-            message.content +
-          `</p>` +
-        `</div>` +
-      `</div>`
+      var html = `<div class="main-bar__center__box" data-message-id= message.id >
+        <div class="upper-message">
+          <div class="main-bar__center__box__name">
+            message.user_name 
+          </div>
+          <div class="main-bar__center__box__tweet">
+            message.created_at 
+          </div>
+        </div>
+        <div class="lower-message">
+          <p class="lower-message__content">
+            message.content 
+          </p>
+        </div> 
+      </div>`
     } else if (message.image) {
-      var html = `<div class="main-bar__center__box" data-message-id=` + message.id + `>` +
-        `<div class="upper-message">` +
-          `<div class="main-bar__center__box__name">` +
-            message.user_name +
-          `</div>` +
-          `<div class="main-bar__center__box__tweet">` +
-            message.created_at +
-          `</div>` +
-        `</div>` +
-        `<div class="lower-message">` +
-          `<img src="` + message.image + `" class="lower-message__image" >` +
-        `</div>` +
-      `</div>`
+      var html = `<div class="main-bar__center__box" data-message-id= message.id >
+        <div class="upper-message">
+          <div class="main-bar__center__box__name">
+            message.user_name 
+          </div>
+          <div class="main-bar__center__box__tweet">
+            message.created_at 
+          </div>
+        </div>
+        <div class="lower-message">
+          <img src="` + message.image + `" class="lower-message__image" >
+        </div>
+      </div>`
     };
     return html;
   }
