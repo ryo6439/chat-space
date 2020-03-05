@@ -20,4 +20,4 @@
           = f.label :image, class: 'main-bar__under__image' do
             = icon('fas', 'image', class: 'icon')
             = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit-btn'
+        = f.submit 'Send', class: 'form__submit-btn', 'data-disable-with' => false
